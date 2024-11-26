@@ -1,28 +1,17 @@
 ---
-
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>home</title>
-	</head>
-	<body>
-		<h1>Home page</h1>
-		<p>tiempo actual:{new Date().toLocaleTimeString()}</p>
-		<p id="hora"></p>
-		<footer>Año: 2023</footer>
+<MainLayout title="Home">
+	<h1>Home page</h1>
+	<p>tiempo actual:{new Date().toLocaleTimeString()}</p>
+	<p id="hora"></p>
+	<footer>Año: 2023</footer>
 
-		<script>
-			const time = document.querySelector("footer") as HTMLElement;
-			const hora = document.querySelector(
-				"#hora",
-			) as HTMLParagraphElement;
-			time.innerText = `Año: ${new Date().getFullYear()}`;
-			hora.innerHTML = `tiempo actual: ${new Date().toLocaleTimeString()}`;
-		</script>
-	</body>
-</html>
+	<script>
+		const time = document.querySelector("footer") as HTMLElement;
+		const hora = document.querySelector("#hora") as HTMLParagraphElement;
+		time.innerText = `Año: ${new Date().getFullYear()}`;
+		hora.innerHTML = `tiempo actual: ${new Date().toLocaleTimeString()}`;
+	</script>
+</MainLayout>
