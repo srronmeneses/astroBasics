@@ -1,7 +1,11 @@
 ---
 import { ViewTransitions } from "astro:transitions";
 import Navbar from "../componets/Navbar.astro";
+// importando los Styles
 import "../styles/global.css";
+// Si los styles esta en la carpeta public de sebe importar indicando la ruta del archivo para que todo funcione correctamente
+// import "../../public/styles/global.css";
+
 interface Props {
     title: string;
 }
@@ -15,6 +19,8 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
         <title>{title}</title>
+        <!-- Si los estilos estan en la carpeta public y no se realiza la importacion en el frontmatter -->
+        <!-- <link rel="stylesheet" href="./styles/global.css" /> -->
         <ViewTransitions />
     </head>
     <body>
