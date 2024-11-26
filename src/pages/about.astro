@@ -1,7 +1,15 @@
 ---
+import CustomTitle from "../componets/CustomTitle.astro";
 import MainLayout from "../layouts/MainLayout.astro";
 ---
 
 <MainLayout title="About">
 	<h1>About page</h1>
+	<h1>Otro titulo</h1>
+	<CustomTitle titulo="Custom title" />
+	<style>
+		h1 {
+			color: red;
+		}
+	</style>
 </MainLayout>
