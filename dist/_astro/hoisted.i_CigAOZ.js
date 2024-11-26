@@ -1,0 +1,1 @@
+import"./hoisted.BScVxmeO.js";const e=document.querySelector("footer"),t=document.querySelector("#hora");e.innerText=`Año: ${new Date().getFullYear()}`;t.innerHTML=`tiempo actual: ${new Date().toLocaleTimeString()}`;
