@@ -4,14 +4,23 @@ import MainLayout from "../layouts/MainLayout.astro";
 
 <MainLayout title="Home">
 	<h1>RonCode Astro Basics...</h1>
-	<p>tiempo actual:{new Date().toLocaleTimeString()}</p>
-	<p id="hora"></p>
-	<footer>Año: 2023</footer>
+	<p>Hora actual {new Date().toLocaleTimeString()}</p>
+	<p id="horaActual"></p>
 
 	<script>
-		const time = document.querySelector("footer") as HTMLElement;
-		const hora = document.querySelector("#hora") as HTMLParagraphElement;
-		time.innerText = `Año: ${new Date().getFullYear()}`;
-		hora.innerHTML = `tiempo actual: ${new Date().toLocaleTimeString()}`;
+		const horaActual = document.querySelector(
+			"#horaActual",
+		) as HTMLParagraphElement;
+		const footer = document.querySelector("footer") as HTMLElement;
+		horaActual.innerText = `Hora actual: ${new Date().toLocaleTimeString()}`;
+		footer.innerText = `Año: ${new Date().getFullYear()}`;
 	</script>
 </MainLayout>
+<footer>Año: 2023</footer>
+<!-- <style > astro agrega un identificador cid a todos los h1 de la pagina y posiciona
+ la etiqueta style dentro los meta tags -->
+<style>
+	h1 {
+		color: blue;
+	}
+</style>

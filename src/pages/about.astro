@@ -1,15 +1,19 @@
 ---
-import CustomTitle from "../componets/CustomTitle.astro";
 import MainLayout from "../layouts/MainLayout.astro";
+import CustomTitle from "../components/CustomTitle.astro";
 ---
 
 <MainLayout title="About">
 	<h1>About page</h1>
-	<h1>Otro titulo</h1>
-	<CustomTitle titulo="Custom title" />
-	<style>
+	<h1>Otro h1</h1>
+	<CustomTitle content="h1 desde un Component" />
+
+	<!-- <style is:global> GLOBAL agrega los styles dentro los meta tags, aplicando de esta manera a toda la página-->
+	<style is:inline>
+		/** INLINE agrega los styles al final del documento fuera de html y aplica los estilos a toda la pagina*/
 		h1 {
 			color: red;
 		}
 	</style>
 </MainLayout>
+<footer>roncode</footer>

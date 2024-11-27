@@ -1,27 +1,33 @@
 ---
 import { ViewTransitions } from "astro:transitions";
-import Navbar from "../componets/Navbar.astro";
-// importando los Styles
+import Navbar from "../components/Navbar.astro";
+/* si la carpeta de styles esta en src se importa de manera normal y astro agregara
+los styles a los meta tags de cada pagina*/
 import "../styles/global.css";
-// Si los styles esta en la carpeta public de sebe importar indicando la ruta del archivo para que todo funcione correctamente
+/* tambien se tiene la posibilidad de que los styles esten en la carpeta public si es
+de esta manera, solo se debe agregar la ruta extacta y astro lo procesara y tb lo agregará
+el style a los meta tags de cada pagina */
 // import "../../public/styles/global.css";
 
 interface Props {
     title: string;
 }
+
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="es">
     <head>
         <meta charset="utf-8" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{title}</title>
-        <!-- Si los estilos estan en la carpeta public y no se realiza la importacion en el frontmatter -->
-        <!-- <link rel="stylesheet" href="./styles/global.css" /> -->
+        <!-- Pero si los styles estan en public tambien es posible agregar la referencia a los
+         mismos en MainLayout con la diferencia de que astro creara el link-css a un archivo
+         independiente de css en cada pagina -->
+        <!-- <link rel="stylesheet" href="../../public/styles/global.css" /> -->
         <ViewTransitions />
+        <title>{title}</title>
     </head>
     <body>
         <Navbar />
